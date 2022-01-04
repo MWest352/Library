@@ -13,10 +13,14 @@ function Book(title, author, pages, read) {
 
 const TheHobbit = new Book('The Hobbit', 'JR Tolkein', 310, false);
 
+const HouseofLeaves = new Book('House of Leaves', 'Mark Z. Danielewski', 709, true)
+
 console.log(TheHobbit.info);
 
 function addBookToLibrary(){
-   
+  myLibrary.push(TheHobbit);
+  myLibrary.push(HouseofLeaves);
 }
+addBookToLibrary();
 
-
+console.log(myLibrary[1])
