@@ -22,8 +22,6 @@ body{
 }
 
 .aboutHeading{
-  border: solid;
-  border-color: black;
   color: #f9faf8;
   font-size: 36px;
   text-shadow:5px 5px 10px black;
@@ -33,12 +31,18 @@ body{
 }
 
 .aboutParagraph{
-  border: solid;
-  border-color: black;
   display: flex;
   padding-left: 10%;
   padding-right: 10%;
   color: #f9faf8;
   text-shadow: 2px 2px 3px black;
   text-align: center;
+}
+
+.buttons{
+  background-color: #CE8E4C;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 50px;
+
 }
