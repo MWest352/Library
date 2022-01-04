@@ -1,0 +1,44 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.SiteWrapper{
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.about{
+  display:flex;
+  justify-content: center;
+  padding: 5%;
+  background-image: url(https://cdn.pixabay.com/photo/2021/07/27/16/02/library-6497266_960_720.jpg);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.aboutHeading{
+  border: solid;
+  border-color: black;
+  color: #f9faf8;
+  font-size: 36px;
+  text-shadow:5px 5px 10px black;
+  text-align: center;
+  font-weight: bolder;
+  
+}
+
+.aboutParagraph{
+  border: solid;
+  border-color: black;
+  display: flex;
+  padding-left: 10%;
+  padding-right: 10%;
+  color: #f9faf8;
+  text-shadow: 2px 2px 3px black;
+  text-align: center;
+}
