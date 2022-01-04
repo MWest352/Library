@@ -44,5 +44,16 @@ body{
   display: flex;
   justify-content: space-evenly;
   padding: 50px;
+}
 
+.addBook, .viewAll{
+  background-color: #4A2408;
+  color: #D8A160;
+  padding: 10px;
+  font-family: 'roboto', sans-serif;
+  padding: 5px 10px;
+  border: 3px solid blanchedalmond;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.3ch; 
 }
