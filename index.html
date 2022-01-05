@@ -33,8 +33,17 @@
 
     <!--Buttons-->
     <div class="buttons">
-      <button class="addBook">Add Book</button>
-      <button class="viewAll">View All Books</button>
+      <button data-open-target="#openForm" class="addBook">Add Book</button>
+      <div class="openForm" id="openForm">
+        <div class="formHeader">
+          <div class="formTitle">Add New Book</div>
+          <button data-close-button="" class="closeButton">&times;</button>
+        </div>
+        <div class="formBody">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis corrupti quisquam, facilis amet voluptas dolore nihil numquam deserunt iusto cupiditate ea recusandae rem. Libero eos dignissimos, atque, similique dolores laboriosam recusandae iste velit obcaecati dolor aliquam animi, provident cum dolorem error est minus ipsam pariatur rem. Sequi, voluptates! Reprehenderit, saepe! Illo similique dolorem vero. Facilis obcaecati vitae repellat blanditiis sed pariatur, quasi, corporis voluptas est similique porro minima. Aperiam repellat iure ratione, repudiandae asperiores nulla nostrum hic eos voluptatum id.
+        </div>
+      </div>
+      <div id="overlay"></div>
     </div>
 
 
