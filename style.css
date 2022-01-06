@@ -70,7 +70,7 @@ body{
   background-color: #401801;
   z-index: 10;
   width:500px;
-  max-width: 80%;
+  max-width: 35%;
 }
 
 .openForm.active {
@@ -103,7 +103,37 @@ body{
 
 .formBody {
   padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
 }
+
+.inputTitle, .inputAuthor, .inputPages{
+  display: flex;
+  justify-content: space-between;
+  padding: 2px;
+}
+
+
+.subButton {
+  background-color: #4A2408;
+  color: #D8A160;
+  padding: 10px;
+  font-family: 'roboto', sans-serif;
+  margin-top: 10px;
+  padding: 5px 10px;
+  border: 3px solid blanchedalmond;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.3ch;
+  text-shadow: 2px 2px 10px black ; 
+}
+
+.submitButton {
+  display: flex;
+  justify-content: end;
+  padding: 2px
+}
+
 
 #overlay {
   position: fixed;

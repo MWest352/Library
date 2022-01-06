@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <!--Buttons-->
+    <!--Add Book Button and Form-->
     <div class="buttons">
       <button data-open-target="#openForm" class="addBook">Add Book</button>
       <div class="openForm" id="openForm">
@@ -40,7 +40,32 @@
           <button data-close-button="" class="closeButton">&times;</button>
         </div>
         <div class="formBody">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis corrupti quisquam, facilis amet voluptas dolore nihil numquam deserunt iusto cupiditate ea recusandae rem. Libero eos dignissimos, atque, similique dolores laboriosam recusandae iste velit obcaecati dolor aliquam animi, provident cum dolorem error est minus ipsam pariatur rem. Sequi, voluptates! Reprehenderit, saepe! Illo similique dolorem vero. Facilis obcaecati vitae repellat blanditiis sed pariatur, quasi, corporis voluptas est similique porro minima. Aperiam repellat iure ratione, repudiandae asperiores nulla nostrum hic eos voluptatum id.
+
+          <!--Inputs for Add Book Form-->
+          <div class="inputTitle">
+            <label for="bookTitle">Book Title:</label>
+            <input type="text" name="title" required >
+          </div>
+          
+          <div class="inputAuthor">
+            <label for="author">Author:</label>
+            <input type="text" name="author" required>
+          </div>
+          
+          <div class="inputPages">
+            <label for="pages">How Many Pages:</label>
+            <input type="number" name="pages">
+          </div>
+          
+          <div class="inputRead">
+            <label for="read">I have read this book:</label>
+            <input type="checkbox" required>
+          </div>
+
+          <div class="submitButton">
+            <input type="submit" value= "Submit Entry" class="subButton">
+          </div>
+          
         </div>
       </div>
       <div id="overlay"></div>
