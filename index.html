@@ -39,34 +39,38 @@
           <div class="formTitle">Add New Book</div>
           <button data-close-button="" class="closeButton">&times;</button>
         </div>
-        <div class="formBody">
 
-          <!--Inputs for Add Book Form-->
-          <div class="inputTitle">
-            <label for="bookTitle">Book Title:</label>
-            <input type="text" name="title" required >
-          </div>
-          
-          <div class="inputAuthor">
-            <label for="author">Author:</label>
-            <input type="text" name="author" required>
-          </div>
-          
-          <div class="inputPages">
-            <label for="pages">How Many Pages:</label>
-            <input type="number" name="pages">
-          </div>
-          
-          <div class="inputRead">
-            <label for="read">I have read this book:</label>
-            <input type="checkbox" required>
-          </div>
+        <!--Form-->
+        <form id="form">
+          <div class="formBody">
 
-          <div class="submitButton">
-            <input type="submit" value= "Submit Entry" class="subButton">
-          </div>
+            <!--Inputs for Add Book Form-->
+            <div class="inputTitle">
+              <label for="bookTitle">Book Title:</label>
+              <input type="text" name="title" id="title" required >
+            </div>
+            
+            <div class="inputAuthor">
+              <label for="author">Author:</label>
+              <input type="text" name="author" id="author" required>
+            </div>
+            
+            <div class="inputPages">
+              <label for="pages">How Many Pages:</label>
+              <input type="number" name="pages" id="pages">
+            </div>
+            
+            <div class="inputRead">
+              <label for="read">I have read this book:</label>
+              <input type="checkbox" id="hasRead" >
+            </div>
+
+            <div class="submitButton">
+              <input type="submit" value="Submit Entry" class="subButton">
+            </div>
           
-        </div>
+          </div>
+        </form>
       </div>
       <div id="overlay"></div>
     </div>

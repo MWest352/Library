@@ -32,6 +32,33 @@ function closeForm(openAddForm) {
 }
 
 
+//Form Submission
+var form = document.getElementById('form')
+
+form.addEventListener('submit', function(event){
+  event.preventDefault()
+
+  var title = document.getElementById('title').value
+  console.log(title)
+
+  var author = document.getElementById('author').value
+  console.log(author)
+
+  var pages = document.getElementById('pages').value
+  console.log(pages)
+
+  let hasRead = document.querySelector('#hasRead')
+  console.log(hasRead.checked)
+
+  document.getElementById('form').reset();  
+})
+
+
+
+
+
+
+
 
 // let myLibrary = [];
 
