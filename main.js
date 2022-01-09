@@ -47,40 +47,34 @@ form.addEventListener('submit', function(event){
   var pages = document.getElementById('pages').value
   console.log(pages)
 
-  let hasRead = document.querySelector('#hasRead')
+  let hasRead = document.querySelector('#hasRead').checked
   console.log(hasRead.checked)
+
+  const book = new Book(title, author, pages, hasRead);
+  console.log(book.info)
+
+  addBookToLibrary(book);
+
+  console.log(myLibrary)
 
   document.getElementById('form').reset();  
 })
 
 
 
+let myLibrary = [];
 
 
+function Book(title, author, pages, read) {
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.read = false;
+  this.info = "Author: " + author + "\nTitle: " + title + "\nPages: " + pages + "\nHave you read this before?: " + read;
+};
+
+function addBookToLibrary(book){
+ myLibrary.push(book)
+}
 
 
-
-// let myLibrary = [];
-
-
-// function Book(title, author, pages, read) {
-//   this.title = title;
-//   this.author = author;
-//   this.pages = pages;
-//   this.read = false;
-//   this.info = "Author: " + author + "\nTitle: " + title + "\nPages: " + pages + "\nHave you read this before?: " + read;
-// };
-
-// const TheHobbit = new Book('The Hobbit', 'JR Tolkein', 310, false);
-
-// const HouseofLeaves = new Book('House of Leaves', 'Mark Z. Danielewski', 709, true)
-
-// console.log(TheHobbit.info);
-
-// function addBookToLibrary(){
-//   myLibrary.push(TheHobbit);
-//   myLibrary.push(HouseofLeaves);
-// }
-// addBookToLibrary();
-
-// console.log(myLibrary[1])
