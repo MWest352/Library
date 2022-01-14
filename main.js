@@ -39,25 +39,29 @@ form.addEventListener('submit', function(event){
   event.preventDefault()
 
   var title = document.getElementById('title').value
-  console.log(title)
+  //console.log(title)
 
   var author = document.getElementById('author').value
-  console.log(author)
+  //console.log(author)
 
   var pages = document.getElementById('pages').value
-  console.log(pages)
+  //console.log(pages)
 
   let hasRead = document.querySelector('#hasRead').checked
-  console.log(hasRead.checked)
+  //console.log(hasRead.checked)
 
   const book = new Book(title, author, pages, hasRead);
-  console.log(book.info)
+  //console.log(book.info)
 
   addBookToLibrary(book);
 
-  console.log(myLibrary)
+  //console.log(myLibrary);
+
+  displayBooks(myLibrary);
 
   document.getElementById('form').reset();  
+
+  
 })
 
 
@@ -74,7 +78,9 @@ function Book(title, author, pages, read) {
 };
 
 function addBookToLibrary(book){
- myLibrary.push(book)
-}
+ myLibrary.push(book);
+};
 
-
+function displayBooks(myLibrary) {
+  myLibrary.forEach(element => console.log(element.info));
+};
