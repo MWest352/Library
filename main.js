@@ -81,6 +81,17 @@ function addBookToLibrary(book){
  myLibrary.push(book);
 };
 
-function displayBooks(myLibrary) {
-  myLibrary.forEach(element => console.log(element.info));
-};
+function displayBooks(myLibrary){
+  const newestBook = myLibrary[myLibrary.length - 1];
+  const library = document.querySelector('#library');
+
+  const createBook = document.createElement('div');
+  createBook.classList.add('createBook');
+  createBook.textContent = newestBook.info;
+
+  library.appendChild(createBook);
+}
+
+
+
+
