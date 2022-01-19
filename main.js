@@ -47,15 +47,15 @@ form.addEventListener('submit', function(event){
   var pages = document.getElementById('pages').value
   //console.log(pages)
 
-  let hasRead = document.querySelector('#hasRead').checked
+  let hasRead = document.querySelector('#hasRead').checked;
   //console.log(hasRead.checked)
 
   const book = new Book(title, author, pages, hasRead);
-  //console.log(book.info)
+  console.log(book.info)
 
   addBookToLibrary(book);
 
-  //console.log(myLibrary);
+  console.log(myLibrary);
 
   displayBooks(myLibrary);
 
@@ -65,32 +65,48 @@ form.addEventListener('submit', function(event){
 })
 
 
-
 let myLibrary = [];
-
 
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.read = false;
-  this.info = "Author: " + author + "\nTitle: " + title + "\nPages: " + pages + "\nHave you read this before?: " + read;
+  this.read = read;
+  this.info = "Author: " + author + "Title: " + title + "\nPages: " + pages + "\nHave you read this before?: " + read;
 };
 
-function addBookToLibrary(book){
+function addBookToLibrary(book) {
  myLibrary.push(book);
 };
 
-function displayBooks(myLibrary){
+function displayBooks(myLibrary) {
   const newestBook = myLibrary[myLibrary.length - 1];
   const library = document.querySelector('#library');
 
   const createBook = document.createElement('div');
+  const showAuthor = document.createElement('div');
+  const showTitle = document.createElement('div');
+  const showPages = document.createElement('div');
+  const showRead = document.createElement('div');
+
+  
   createBook.classList.add('createBook');
-  createBook.textContent = newestBook.info;
+  showAuthor.classList.add('showAuthor');
+  showTitle.classList.add('showTitle');
+  showPages.classList.add('showPages');
+  showRead.classList.add('showRead');
+
+  showAuthor.textContent = "Author: " + newestBook.author;
+  showTitle.textContent = "Title: " + newestBook.title;
+  showPages.textContent = "Pages: " + newestBook.pages;
+  showRead.textContent = "Read: " + newestBook.read;
 
   library.appendChild(createBook);
-}
+  createBook.appendChild(showTitle);
+  createBook.appendChild(showAuthor);
+  createBook.appendChild(showPages);
+  createBook.appendChild(showRead);
+};
 
 
 
