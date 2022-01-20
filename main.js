@@ -62,7 +62,7 @@ form.addEventListener('submit', function(event){
   document.getElementById('form').reset();  
 
   
-})
+});
 
 
 let myLibrary = [];
@@ -88,6 +88,8 @@ function displayBooks(myLibrary) {
   const showTitle = document.createElement('div');
   const showPages = document.createElement('div');
   const showRead = document.createElement('div');
+  const removeBook = document.createElement('div');
+  const removeButton = document.createElement('button');
 
   
   createBook.classList.add('createBook');
@@ -95,19 +97,23 @@ function displayBooks(myLibrary) {
   showTitle.classList.add('showTitle');
   showPages.classList.add('showPages');
   showRead.classList.add('showRead');
+  removeBook.classList.add('removeBook');
+  removeButton.classList.add('removeButton');
 
   showAuthor.textContent = "Author: " + newestBook.author;
   showTitle.textContent = "Title: " + newestBook.title;
   showPages.textContent = "Pages: " + newestBook.pages;
   showRead.textContent = "Read: " + newestBook.read;
+  removeButton.textContent = "Remove Book";
 
   library.appendChild(createBook);
   createBook.appendChild(showTitle);
   createBook.appendChild(showAuthor);
   createBook.appendChild(showPages);
   createBook.appendChild(showRead);
+  createBook.appendChild(removeBook);
+  removeBook.appendChild(removeButton);
+
+  removeButton.addEventListener('click', function() {
+    if (confirm("are you sure?") === true) {createBook.remove()} })
 };
-
-
-
-
