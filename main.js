@@ -51,11 +51,11 @@ form.addEventListener('submit', function(event){
   //console.log(hasRead.checked)
 
   const book = new Book(title, author, pages, hasRead);
-  console.log(book.info)
+  //console.log(book.info)
 
   addBookToLibrary(book);
 
-  console.log(myLibrary);
+  //console.log(myLibrary);
 
   displayBooks(myLibrary);
 
@@ -81,6 +81,7 @@ function addBookToLibrary(book) {
 
 function displayBooks(myLibrary) {
   const newestBook = myLibrary[myLibrary.length - 1];
+  const bookIndex = myLibrary.length - 1
   const library = document.querySelector('#library');
 
   const createBook = document.createElement('div');
@@ -90,9 +91,9 @@ function displayBooks(myLibrary) {
   const showRead = document.createElement('div');
   const removeBook = document.createElement('div');
   const removeButton = document.createElement('button');
-
   
   createBook.classList.add('createBook');
+  createBook.setAttribute('data', bookIndex);
   showAuthor.classList.add('showAuthor');
   showTitle.classList.add('showTitle');
   showPages.classList.add('showPages');
@@ -114,6 +115,13 @@ function displayBooks(myLibrary) {
   createBook.appendChild(removeBook);
   removeBook.appendChild(removeButton);
 
+  //Remove element and delete book from Library
+  const getBookIndex = createBook.getAttribute('data');
+
   removeButton.addEventListener('click', function() {
-    if (confirm("are you sure?") === true) {createBook.remove()} })
+    if (confirm("are you sure?") === true) {
+      createBook.remove(), myLibrary.pop(getBookIndex);
+    } 
+    console.log(myLibrary);
+   });  
 };
