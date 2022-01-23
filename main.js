@@ -49,15 +49,15 @@ form.addEventListener('submit', function(event){
 
   let hasRead = document.querySelector('#hasRead').checked;
   //console.log(hasRead.checked)
-
+  
   const book = new Book(title, author, pages, hasRead);
-  //console.log(book.info)
+  //console.log(book.info());
 
   addBookToLibrary(book);
 
   //console.log(myLibrary);
 
-  displayBooks(myLibrary);
+  displayBooks(myLibrary, book);
 
   document.getElementById('form').reset();  
 
@@ -67,19 +67,29 @@ form.addEventListener('submit', function(event){
 
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages, hasRead) {
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.read = read;
-  this.info = "Author: " + author + "Title: " + title + "\nPages: " + pages + "\nHave you read this before?: " + read;
+  this.hasRead = hasRead;
+  //this.info = "Author: " + author + "Title: " + title + "\nPages: " + pages + "\nHave you read this before?: " + hasRead;
 };
+
+Book.prototype.info = function() {
+  console.log("Author: " + this.author + "\nTitle: " + this.title + "\nPages: " + this.pages + "\nHave you read this before?: " + this.hasRead);
+};
+
+Book.prototype.toggleRead = function() {
+  this.hasRead = this.hasRead? false : true
+};
+
 
 function addBookToLibrary(book) {
  myLibrary.push(book);
 };
 
-function displayBooks(myLibrary) {
+function displayBooks(myLibrary, book) {
+
   const newestBook = myLibrary[myLibrary.length - 1];
   const bookIndex = myLibrary.length - 1
   const library = document.querySelector('#library');
@@ -88,7 +98,7 @@ function displayBooks(myLibrary) {
   const showAuthor = document.createElement('div');
   const showTitle = document.createElement('div');
   const showPages = document.createElement('div');
-  const showRead = document.createElement('div');
+  const showRead = document.createElement('button');
   const removeBook = document.createElement('div');
   const removeButton = document.createElement('button');
   
@@ -104,7 +114,7 @@ function displayBooks(myLibrary) {
   showAuthor.textContent = "Author: " + newestBook.author;
   showTitle.textContent = "Title: " + newestBook.title;
   showPages.textContent = "Pages: " + newestBook.pages;
-  showRead.textContent = "Read: " + newestBook.read;
+  showRead.textContent = "Read: " + newestBook.hasRead;
   removeButton.textContent = "Remove Book";
 
   library.appendChild(createBook);
@@ -115,13 +125,20 @@ function displayBooks(myLibrary) {
   createBook.appendChild(removeBook);
   removeBook.appendChild(removeButton);
 
+  //Toggle for Read
+  showRead.addEventListener('click', function(){
+    book.toggleRead();
+    showRead.textContent = "Read: " + newestBook.hasRead;    
+  });
+  
+
   //Remove element and delete book from Library
   const getBookIndex = createBook.getAttribute('data');
 
   removeButton.addEventListener('click', function() {
-    if (confirm("are you sure?") === true) {
+    if (confirm("Are you sure you want to delete this book?") === true) {
       createBook.remove(), myLibrary.pop(getBookIndex);
     } 
     console.log(myLibrary);
-   });  
+   });
 };
