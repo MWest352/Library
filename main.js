@@ -55,7 +55,7 @@ form.addEventListener('submit', function(event){
 
   addBookToLibrary(book);
 
-  //console.log(myLibrary);
+  console.log(myLibrary);
 
   displayBooks(myLibrary, book);
 
@@ -128,7 +128,8 @@ function displayBooks(myLibrary, book) {
   //Toggle for Read
   showRead.addEventListener('click', function(){
     book.toggleRead();
-    showRead.textContent = "Read: " + newestBook.hasRead;    
+    showRead.textContent = "Read: " + newestBook.hasRead;
+    console.log(myLibrary);   
   });
   
 
