@@ -41,6 +41,7 @@ body{
 
 .buttons{
   background-color: #CE8E4C;
+  background-image: url(http://www.transparenttextures.com/patterns/leather.png);
   display: flex;
   justify-content: center;
   padding: 50px;
@@ -180,16 +181,18 @@ body{
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
+  min-height: 500px;
   background-color: #8C451C;
+  background-image: url(https://www.transparenttextures.com/patterns/dark-wood.png);
 }
 
 .createBook {
   font-family: 'Courier New', Courier, monospace;
-  background-color: burlywood;
+  background-color: #ad7740;
+  background-image: url(http://www.transparenttextures.com/patterns/leather.png);
   width: 200px;
   text-align: center;
   margin: 10px;
-  padding: 5px;
   border: solid;
   border-radius: 3px;
   border-color: #a66832;
@@ -201,8 +204,12 @@ body{
   border: solid;
   border-color: #4A2408;
   padding: 30px 10px;
-  background-color: #CE8E4C;
+  background-color: #ad7740;
+  background-image: url(http://www.transparenttextures.com/patterns/leather.png);
   border-color: #4A2408;
+  text-align: center;
+  min-height: 50px;
+  max-height: 50px;
 }
 
 .removeButton, .showRead {

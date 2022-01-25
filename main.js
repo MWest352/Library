@@ -111,9 +111,9 @@ function displayBooks(myLibrary, book) {
   removeBook.classList.add('removeBook');
   removeButton.classList.add('removeButton');
 
-  showAuthor.textContent = "Author: " + newestBook.author;
-  showTitle.textContent = "Title: " + newestBook.title;
-  showPages.textContent = "Pages: " + newestBook.pages;
+  showAuthor.innerText = "Author:\n" + newestBook.author;
+  showTitle.innerText = "Title:\n" + newestBook.title;
+  showPages.innerText = "Pages:\n" + newestBook.pages;
   showRead.textContent = "Read: " + newestBook.hasRead;
   removeButton.textContent = "Remove Book";
 
