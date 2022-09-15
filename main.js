@@ -51,7 +51,7 @@ form.addEventListener('submit', function(event){
   //console.log(hasRead.checked)
   
   const book = new Book(title, author, pages, hasRead);
-  //console.log(book.info());
+  //console.log(book.bookInfo());
 
   addBookToLibrary(book);
 
@@ -67,20 +67,24 @@ form.addEventListener('submit', function(event){
 
 let myLibrary = [];
 
-function Book(title, author, pages, hasRead) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.hasRead = hasRead;
-  //this.info = "Author: " + author + "Title: " + title + "\nPages: " + pages + "\nHave you read this before?: " + hasRead;
-};
+class Book {
+  constructor(title, author, pages, hasRead){
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.hasRead = hasRead;
+  //this.bookInfo = "Author: " + author + "Title: " + title + "\nPages: " + pages + "\nHave you read this before?: " + hasRead;
+  };
 
-Book.prototype.info = function() {
-  console.log("Author: " + this.author + "\nTitle: " + this.title + "\nPages: " + this.pages + "\nHave you read this before?: " + this.hasRead);
-};
+  bookInfo(){
+    console.log("Author: " + this.author + "\nTitle: " + this.title + "\nPages: " + this.pages + "\nHave you read this before?: " + this.hasRead);
+  };
 
-Book.prototype.toggleRead = function() {
-  this.hasRead = this.hasRead? false : true
+  toggleRead(){
+    this.hasRead = this.hasRead? false : true
+  };
+
+
 };
 
 
